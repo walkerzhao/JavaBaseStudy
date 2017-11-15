@@ -14,10 +14,10 @@ public class Log4j2Test {
 	private static Logger logger = LogManager.getLogger(Log4j2Test.class);
 	public static void main(String[] args) {
 		System.out.println("hello,world");
-		logger.debug("hello,world--debug log");
-		logger.info("hello,world--info log");
-		logger.warn("hello,world--warn log");
-		logger.error("hello,world--error log");
+		logger.info("hello,world--debug log");
+//		logger.info("hello,world--info log");
+//		logger.warn("hello,world--warn log");
+//		logger.error("hello,world--error log");
 	}
 
 }
