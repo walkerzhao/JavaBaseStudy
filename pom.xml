@@ -56,7 +56,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.tencent.javaBase.App</mainClass>
+							<mainClass>com.tencent.jungle.db.bootstrap.BootStrap</mainClass>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
 						</manifest>
