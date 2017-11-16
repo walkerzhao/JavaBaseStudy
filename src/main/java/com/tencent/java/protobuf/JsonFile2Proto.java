@@ -11,7 +11,9 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import com.googlecode.protobuf.format.JsonFormat;
 import com.googlecode.protobuf.format.util.TextUtils;
+import com.tencent.java.proto.HoroscopeSnippetProtos.CarType;
 import com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet;
+import com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType;
 
 /**
  * 一个json文件转换为pb数据
@@ -44,6 +46,8 @@ public class JsonFile2Proto {
 		//* 读取json文件
 		ObjectMapper mapper = new ObjectMapper();		
 		Object json = mapper.readValue(new File("./json/test.json"), Object.class);
+		System.out.println(json.getClass());
+		System.out.print("jsonFile2String:");
 		System.out.println(json);
 		
 	}
@@ -54,11 +58,14 @@ public class JsonFile2Proto {
 	private static String pb2Json() {
 		HoroscopeSnippet.Builder msg = HoroscopeSnippet.newBuilder();
 		msg.setAuthor("ewanzhao");
+		msg.setPhoneType(PhoneType.HOME);
+		msg.setCarType(CarType.CAR);
 		System.out.println(msg);
 		
 		HoroscopeSnippet test = msg.build();
 		JsonFormat jsonFormat = new JsonFormat();
 		String asJson = jsonFormat.printToString(test);
+		System.out.print("pb2Json:");
 		System.out.println(asJson);
 		return asJson;
 		

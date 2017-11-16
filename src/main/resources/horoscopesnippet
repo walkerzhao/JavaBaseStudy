@@ -3,10 +3,26 @@ package proto.horoscopesnippet;
 option java_package = "com.tencent.java.proto";
 option java_outer_classname = "HoroscopeSnippetProtos";
 
+
+enum CarType {  
+    CAR = 0;  
+    BUS = 1;
+ }
+
 message HoroscopeSnippet {
 	 optional string extended_link = 7;
 	 optional string author = 10;
 	 optional uint64 ts_update = 12;
+	 
+	 
+ 	enum PhoneType {  
+	    MOBILE = 0;  
+	    HOME = 1;  
+	    WORK = 2;  
+  	}
+  	optional PhoneType phoneType = 13;
+  	
+  	optional CarType carType = 14;
 }
 
 message Summary {

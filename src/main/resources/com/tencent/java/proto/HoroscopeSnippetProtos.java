@@ -8,6 +8,88 @@ public final class HoroscopeSnippetProtos {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  /**
+   * Protobuf enum {@code proto.horoscopesnippet.CarType}
+   */
+  public enum CarType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>CAR = 0;</code>
+     */
+    CAR(0, 0),
+    /**
+     * <code>BUS = 1;</code>
+     */
+    BUS(1, 1),
+    ;
+
+    /**
+     * <code>CAR = 0;</code>
+     */
+    public static final int CAR_VALUE = 0;
+    /**
+     * <code>BUS = 1;</code>
+     */
+    public static final int BUS_VALUE = 1;
+
+
+    public final int getNumber() { return value; }
+
+    public static CarType valueOf(int value) {
+      switch (value) {
+        case 0: return CAR;
+        case 1: return BUS;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CarType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<CarType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CarType>() {
+            public CarType findValueByNumber(int number) {
+              return CarType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.tencent.java.proto.HoroscopeSnippetProtos.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final CarType[] VALUES = values();
+
+    public static CarType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private CarType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:proto.horoscopesnippet.CarType)
+  }
+
   public interface HoroscopeSnippetOrBuilder extends
       // @@protoc_insertion_point(interface_extends:proto.horoscopesnippet.HoroscopeSnippet)
       com.google.protobuf.MessageOrBuilder {
@@ -48,6 +130,24 @@ public final class HoroscopeSnippetProtos {
      * <code>optional uint64 ts_update = 12;</code>
      */
     long getTsUpdate();
+
+    /**
+     * <code>optional .proto.horoscopesnippet.HoroscopeSnippet.PhoneType phoneType = 13;</code>
+     */
+    boolean hasPhoneType();
+    /**
+     * <code>optional .proto.horoscopesnippet.HoroscopeSnippet.PhoneType phoneType = 13;</code>
+     */
+    com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType getPhoneType();
+
+    /**
+     * <code>optional .proto.horoscopesnippet.CarType carType = 14;</code>
+     */
+    boolean hasCarType();
+    /**
+     * <code>optional .proto.horoscopesnippet.CarType carType = 14;</code>
+     */
+    com.tencent.java.proto.HoroscopeSnippetProtos.CarType getCarType();
   }
   /**
    * Protobuf type {@code proto.horoscopesnippet.HoroscopeSnippet}
@@ -118,6 +218,28 @@ public final class HoroscopeSnippetProtos {
               tsUpdate_ = input.readUInt64();
               break;
             }
+            case 104: {
+              int rawValue = input.readEnum();
+              com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType value = com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(13, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                phoneType_ = value;
+              }
+              break;
+            }
+            case 112: {
+              int rawValue = input.readEnum();
+              com.tencent.java.proto.HoroscopeSnippetProtos.CarType value = com.tencent.java.proto.HoroscopeSnippetProtos.CarType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(14, rawValue);
+              } else {
+                bitField0_ |= 0x00000010;
+                carType_ = value;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -155,6 +277,97 @@ public final class HoroscopeSnippetProtos {
     @java.lang.Override
     public com.google.protobuf.Parser<HoroscopeSnippet> getParserForType() {
       return PARSER;
+    }
+
+    /**
+     * Protobuf enum {@code proto.horoscopesnippet.HoroscopeSnippet.PhoneType}
+     */
+    public enum PhoneType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>MOBILE = 0;</code>
+       */
+      MOBILE(0, 0),
+      /**
+       * <code>HOME = 1;</code>
+       */
+      HOME(1, 1),
+      /**
+       * <code>WORK = 2;</code>
+       */
+      WORK(2, 2),
+      ;
+
+      /**
+       * <code>MOBILE = 0;</code>
+       */
+      public static final int MOBILE_VALUE = 0;
+      /**
+       * <code>HOME = 1;</code>
+       */
+      public static final int HOME_VALUE = 1;
+      /**
+       * <code>WORK = 2;</code>
+       */
+      public static final int WORK_VALUE = 2;
+
+
+      public final int getNumber() { return value; }
+
+      public static PhoneType valueOf(int value) {
+        switch (value) {
+          case 0: return MOBILE;
+          case 1: return HOME;
+          case 2: return WORK;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<PhoneType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<PhoneType>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PhoneType>() {
+              public PhoneType findValueByNumber(int number) {
+                return PhoneType.valueOf(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final PhoneType[] VALUES = values();
+
+      public static PhoneType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private PhoneType(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto.horoscopesnippet.HoroscopeSnippet.PhoneType)
     }
 
     private int bitField0_;
@@ -257,10 +470,42 @@ public final class HoroscopeSnippetProtos {
       return tsUpdate_;
     }
 
+    public static final int PHONETYPE_FIELD_NUMBER = 13;
+    private com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType phoneType_;
+    /**
+     * <code>optional .proto.horoscopesnippet.HoroscopeSnippet.PhoneType phoneType = 13;</code>
+     */
+    public boolean hasPhoneType() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .proto.horoscopesnippet.HoroscopeSnippet.PhoneType phoneType = 13;</code>
+     */
+    public com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType getPhoneType() {
+      return phoneType_;
+    }
+
+    public static final int CARTYPE_FIELD_NUMBER = 14;
+    private com.tencent.java.proto.HoroscopeSnippetProtos.CarType carType_;
+    /**
+     * <code>optional .proto.horoscopesnippet.CarType carType = 14;</code>
+     */
+    public boolean hasCarType() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .proto.horoscopesnippet.CarType carType = 14;</code>
+     */
+    public com.tencent.java.proto.HoroscopeSnippetProtos.CarType getCarType() {
+      return carType_;
+    }
+
     private void initFields() {
       extendedLink_ = "";
       author_ = "";
       tsUpdate_ = 0L;
+      phoneType_ = com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType.MOBILE;
+      carType_ = com.tencent.java.proto.HoroscopeSnippetProtos.CarType.CAR;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -284,6 +529,12 @@ public final class HoroscopeSnippetProtos {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeUInt64(12, tsUpdate_);
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeEnum(13, phoneType_.getNumber());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeEnum(14, carType_.getNumber());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -304,6 +555,14 @@ public final class HoroscopeSnippetProtos {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(12, tsUpdate_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(13, phoneType_.getNumber());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(14, carType_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -428,6 +687,10 @@ public final class HoroscopeSnippetProtos {
         bitField0_ = (bitField0_ & ~0x00000002);
         tsUpdate_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
+        phoneType_ = com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType.MOBILE;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        carType_ = com.tencent.java.proto.HoroscopeSnippetProtos.CarType.CAR;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -468,6 +731,14 @@ public final class HoroscopeSnippetProtos {
           to_bitField0_ |= 0x00000004;
         }
         result.tsUpdate_ = tsUpdate_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.phoneType_ = phoneType_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.carType_ = carType_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -496,6 +767,12 @@ public final class HoroscopeSnippetProtos {
         }
         if (other.hasTsUpdate()) {
           setTsUpdate(other.getTsUpdate());
+        }
+        if (other.hasPhoneType()) {
+          setPhoneType(other.getPhoneType());
+        }
+        if (other.hasCarType()) {
+          setCarType(other.getCarType());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -704,6 +981,76 @@ public final class HoroscopeSnippetProtos {
       public Builder clearTsUpdate() {
         bitField0_ = (bitField0_ & ~0x00000004);
         tsUpdate_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType phoneType_ = com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType.MOBILE;
+      /**
+       * <code>optional .proto.horoscopesnippet.HoroscopeSnippet.PhoneType phoneType = 13;</code>
+       */
+      public boolean hasPhoneType() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .proto.horoscopesnippet.HoroscopeSnippet.PhoneType phoneType = 13;</code>
+       */
+      public com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType getPhoneType() {
+        return phoneType_;
+      }
+      /**
+       * <code>optional .proto.horoscopesnippet.HoroscopeSnippet.PhoneType phoneType = 13;</code>
+       */
+      public Builder setPhoneType(com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        phoneType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.horoscopesnippet.HoroscopeSnippet.PhoneType phoneType = 13;</code>
+       */
+      public Builder clearPhoneType() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        phoneType_ = com.tencent.java.proto.HoroscopeSnippetProtos.HoroscopeSnippet.PhoneType.MOBILE;
+        onChanged();
+        return this;
+      }
+
+      private com.tencent.java.proto.HoroscopeSnippetProtos.CarType carType_ = com.tencent.java.proto.HoroscopeSnippetProtos.CarType.CAR;
+      /**
+       * <code>optional .proto.horoscopesnippet.CarType carType = 14;</code>
+       */
+      public boolean hasCarType() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .proto.horoscopesnippet.CarType carType = 14;</code>
+       */
+      public com.tencent.java.proto.HoroscopeSnippetProtos.CarType getCarType() {
+        return carType_;
+      }
+      /**
+       * <code>optional .proto.horoscopesnippet.CarType carType = 14;</code>
+       */
+      public Builder setCarType(com.tencent.java.proto.HoroscopeSnippetProtos.CarType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000010;
+        carType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .proto.horoscopesnippet.CarType carType = 14;</code>
+       */
+      public Builder clearCarType() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        carType_ = com.tencent.java.proto.HoroscopeSnippetProtos.CarType.CAR;
         onChanged();
         return this;
       }
@@ -1223,10 +1570,15 @@ public final class HoroscopeSnippetProtos {
   static {
     java.lang.String[] descriptorData = {
       "\n\020horoscopesnippet\022\026proto.horoscopesnipp" +
-      "et\"L\n\020HoroscopeSnippet\022\025\n\rextended_link\030" +
-      "\007 \001(\t\022\016\n\006author\030\n \001(\t\022\021\n\tts_update\030\014 \001(\004" +
-      "\"\027\n\007Summary\022\014\n\004text\030\001 \002(\tB0\n\026com.tencent" +
-      ".java.protoB\026HoroscopeSnippetProtos"
+      "et\"\362\001\n\020HoroscopeSnippet\022\025\n\rextended_link" +
+      "\030\007 \001(\t\022\016\n\006author\030\n \001(\t\022\021\n\tts_update\030\014 \001(" +
+      "\004\022E\n\tphoneType\030\r \001(\01622.proto.horoscopesn" +
+      "ippet.HoroscopeSnippet.PhoneType\0220\n\007carT" +
+      "ype\030\016 \001(\0162\037.proto.horoscopesnippet.CarTy" +
+      "pe\"+\n\tPhoneType\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020\001\022\010\n" +
+      "\004WORK\020\002\"\027\n\007Summary\022\014\n\004text\030\001 \002(\t*\033\n\007CarT" +
+      "ype\022\007\n\003CAR\020\000\022\007\n\003BUS\020\001B0\n\026com.tencent.jav" +
+      "a.protoB\026HoroscopeSnippetProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1245,7 +1597,7 @@ public final class HoroscopeSnippetProtos {
     internal_static_proto_horoscopesnippet_HoroscopeSnippet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_proto_horoscopesnippet_HoroscopeSnippet_descriptor,
-        new java.lang.String[] { "ExtendedLink", "Author", "TsUpdate", });
+        new java.lang.String[] { "ExtendedLink", "Author", "TsUpdate", "PhoneType", "CarType", });
     internal_static_proto_horoscopesnippet_Summary_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_horoscopesnippet_Summary_fieldAccessorTable = new
