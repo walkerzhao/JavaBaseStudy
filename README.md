@@ -19,3 +19,8 @@
 ## mybatis使用
 * 相关依赖  mysql-connector/mybatis ,运行参考：http://www.mybatis.org/mybatis-3/zh/getting-started.html
 * MyBatis 允许你在已映射语句执行过程中的某一点进行拦截调用； jungle_db中有_log
+
+
+## java多线程
+参考java多线程中常见的问题：http://www.importnew.com/18459.html
+* 死锁：什么是死锁？ 死锁demo；怎么排查死锁；怎么避免死锁？   参考文件：http://www.importnew.com/9668.html
