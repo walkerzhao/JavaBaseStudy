@@ -81,6 +81,12 @@
 			<version>1.2.40</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.db4j</groupId>
+			<artifactId>kilim</artifactId>
+			<version>2.0.0-12</version>
+		</dependency>
+
 
 
 
@@ -102,6 +108,28 @@
 					</archive>
 					<classesDirectory>
 					</classesDirectory>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.db4j</groupId>
+				<artifactId>kilim</artifactId>
+				<version>2.0.0-12</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>weave</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<target>1.7</target>
+					<source>1.7</source>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 		</plugins>
