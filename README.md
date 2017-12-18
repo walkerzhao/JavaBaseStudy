@@ -29,3 +29,9 @@
 * 线程启动start和run区别。start开启新线程，会调用run方法； run只是一个普通的方法。参见：com.tencent.java.multithread.ThreadStartAndRunMethod
 
 
+
+## java泛型
+* java的泛型在编译的时候会类型擦除；可以使用反编译验证；
+* java泛型继承几种用法。
+
+
