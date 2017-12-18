@@ -19,3 +19,12 @@
 ## mybatis使用
 * 相关依赖  mysql-connector/mybatis ,运行参考：http://www.mybatis.org/mybatis-3/zh/getting-started.html
 * MyBatis 允许你在已映射语句执行过程中的某一点进行拦截调用； jungle_db中有_log
+
+
+## java多线程
+参考java多线程中常见的问题：http://www.importnew.com/18459.html
+* 死锁 @com.tencent.java.multithread.DeadLockDemo：什么是死锁？ 死锁demo；怎么排查死锁；怎么避免死锁？   参考文章：http://www.importnew.com/9668.html
+* 多线程的作用：发挥多核的作用，同时运行提升cpu利用率； 防止阻塞； 便于建模，让代码逻辑更清晰。
+* 如何创建线程.参考文章：https://www.cnblogs.com/gw811/archive/2012/10/15/2724882.html
+
+
