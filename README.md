@@ -27,6 +27,7 @@
 * 多线程的作用：发挥多核的作用，同时运行提升cpu利用率； 防止阻塞； 便于建模，让代码逻辑更清晰。
 * 如何创建线程.参考文章：https://www.cnblogs.com/gw811/archive/2012/10/15/2724882.html
 * 线程启动start和run区别。start开启新线程，会调用run方法； run只是一个普通的方法。参见：com.tencent.java.multithread.ThreadStartAndRunMethod
+* Runnable和Callable的区别
 
 
 
