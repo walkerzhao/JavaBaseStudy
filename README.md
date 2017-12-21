@@ -28,6 +28,8 @@
 * 如何创建线程.参考文章：https://www.cnblogs.com/gw811/archive/2012/10/15/2724882.html
 * 线程启动start和run区别。start开启新线程，会调用run方法； run只是一个普通的方法。参见：com.tencent.java.multithread.ThreadStartAndRunMethod
 * Runnable和Callable的区别. callable可以返回结果以及向上层抛出异常、可以了解任务的执行情况并终止任务等。二者都可以用来多线程编程。
+* 待研究：CyclicBarrier和CountDownLatch的区别
+* 待研究：volatile关键字的作用
 
 
 
