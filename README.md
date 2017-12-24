@@ -21,7 +21,7 @@
 * MyBatis 允许你在已映射语句执行过程中的某一点进行拦截调用； jungle_db中有_log
 
 
-## java多线程
+## java多线程 @com.tencent.java.multithread
 参考java多线程中常见的问题：http://www.importnew.com/18459.html
 * 死锁 @com.tencent.java.multithread.DeadLockDemo：什么是死锁？ 死锁demo；怎么排查死锁；怎么避免死锁？   参考文章：http://www.importnew.com/9668.html
 * 多线程的作用：发挥多核的作用，同时运行提升cpu利用率； 防止阻塞； 便于建模，让代码逻辑更清晰。
@@ -30,6 +30,13 @@
 * Runnable和Callable的区别. callable可以返回结果以及向上层抛出异常、可以了解任务的执行情况并终止任务等。二者都可以用来多线程编程。 https://www.cnblogs.com/frinder6/p/5507082.html
 * CyclicBarrier和CountDownLatch的区别. CyclicBarrier是可以重复使用的，一个栅栏，所有线程共同等待某个条件发生之后，继续执行；CountDownLatch是一个计数器，倒计，等待依赖的线程执行完毕之后才继续执行  https://www.cnblogs.com/dolphin0520/p/3920397.html
 * volatile关键字的作用. volatile可以保证可见性和有序性，但是不能保证原子性。需要了解内存布局，cpu的运算速度远高于内存的运算速度，所以会在线程内部做一层高速缓存。:http://www.importnew.com/18126.html
+* 线程安全：代码在多线程环境下执行和单线程环境执行的结果一样，那就是线程安全地。ArrayList、LinkedList、HashMap等都是线程非安全的类
+* 如何获得线程堆栈。打开线程堆栈dump，可以分析很多问题，比如死循环、死锁、阻塞等等。获得线程堆栈也很简单：ps获得进程号，然后jstack 打印线程堆栈即可。在代码里Thread类提供了一个getStackTrace()方法也可以用于获取线程堆栈。
+* 线程中出现了异常会怎么样？   如果线程没有catch出异常，那么这个线程就会终止。如果这个线程持有某个某个对象的监视器，那么这个对象监视器会被立即释放。
+* 线程之间如何共享数据？ 线程之间共享对象就可以了，需要通过wait/notify/notifyall进行唤起和等待。阻塞队列BlockingQueue就是为线程之间共享数据而设计的。 比如多线程中的生产者和消费者线程之间，通过队列来实现数据共享。参考：http://wsmajunfeng.iteye.com/blog/1629354
+* sleep和wait方法之间的区别。
+
+
 
 
 
