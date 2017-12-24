@@ -28,13 +28,16 @@
 * 如何创建线程.参考文章：https://www.cnblogs.com/gw811/archive/2012/10/15/2724882.html
 * 线程启动start和run区别。start开启新线程，会调用run方法； run只是一个普通的方法。参见：com.tencent.java.multithread.ThreadStartAndRunMethod
 * Runnable和Callable的区别. callable可以返回结果以及向上层抛出异常、可以了解任务的执行情况并终止任务等。二者都可以用来多线程编程。 https://www.cnblogs.com/frinder6/p/5507082.html
-* 待研究：CyclicBarrier和CountDownLatch的区别. CyclicBarrier是可以重复使用的，一个栅栏，所有线程共同等待某个条件发生之后，继续执行；CountDownLatch是一个计数器，倒计，等待依赖的线程执行完毕之后才继续执行  https://www.cnblogs.com/dolphin0520/p/3920397.html
-* 待研究：volatile关键字的作用
+* CyclicBarrier和CountDownLatch的区别. CyclicBarrier是可以重复使用的，一个栅栏，所有线程共同等待某个条件发生之后，继续执行；CountDownLatch是一个计数器，倒计，等待依赖的线程执行完毕之后才继续执行  https://www.cnblogs.com/dolphin0520/p/3920397.html
+* volatile关键字的作用. volatile可以保证可见性和有序性，但是不能保证原子性。需要了解内存布局，cpu的运算速度远高于内存的运算速度，所以会在线程内部做一层高速缓存。:http://www.importnew.com/18126.html
 
 
 
 ## java泛型
 * java的泛型在编译的时候会类型擦除；可以使用反编译验证；
 * java泛型继承几种用法。
+
+## java性能分析工具使用
+* jvm参数调优--制造例子
 
 
