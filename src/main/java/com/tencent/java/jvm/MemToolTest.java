@@ -1,4 +1,4 @@
-package com.tencent.memory;
+package com.tencent.java.jvm;
 
 /**
  * java的性能分析工具测试

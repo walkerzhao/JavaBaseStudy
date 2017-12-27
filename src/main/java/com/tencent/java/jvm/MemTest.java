@@ -1,4 +1,4 @@
-package com.tencent.memory;
+package com.tencent.java.jvm;
 
 import java.util.Date;
 
