@@ -37,6 +37,7 @@
 * sleep和wait方法之间的区别。两者都可以用来放弃cpu一段时间。不同的地方在于，如果线程持有某个对象的监视器，sleep不会释放这个监视器，wait会放弃这个监视器。
 * 生产者和消费者模型的作用：平衡生产能力和消费能力，来提升整个系统的运行效率； 解耦。
 * ThreadLocal的作用。线程局部变量。多个线程共享同一个变量的时候，希望线程的局部值可以互相独立，不干扰，此时就可以用ThreadLocal，其实变量里为每个线程存储了副本，是以空间换时间的一种方式，而synchronized是同步的一种方式，会阻塞，效率不高，是以时间换空间的方式。
+* wait/notify/notifyall为什么要在同步块中使用。
 
 
 
@@ -48,5 +49,6 @@
 
 ## java性能分析工具使用
 * jvm参数调优--制造例子
+* 如何查看占用cpu最长的线程。ps 找到java对应的进程id，top -H -p pid，查看进程里的线程占用cpu的百分比，这里的线程id是原生线程，jstack里的线程id有jvm的和native的，需要转换一下，看看jvm里的哪个线程占用cpu最高。http://blog.csdn.net/hanghangaidoudou/article/details/51488249. mac下这个命令用不了。待搜索。
 
 
