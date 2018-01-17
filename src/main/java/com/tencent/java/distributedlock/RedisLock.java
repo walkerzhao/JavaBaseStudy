@@ -1,6 +1,5 @@
 package com.tencent.java.distributedlock;
 
-import com.tencent.jungle.test.api.RedisApiTest;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
