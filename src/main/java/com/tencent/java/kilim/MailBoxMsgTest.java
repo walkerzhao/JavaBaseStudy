@@ -7,36 +7,39 @@ import kilim.Task;
 public class MailBoxMsgTest {
 	
 	public static void main(String[] args) throws InterruptedException {
-		test1();
+		test1(3000_0000);
 		
-		test2();
+		test2(3000_0000);
 
 	}
 
-	private static void test2() throws InterruptedException {
+	private static void test2(long num) throws InterruptedException {
+		long start = System.currentTimeMillis();
 		Mailbox<Integer> mailbox = new Mailbox<>();
-		for(int i=0; i< 100_0000; i++) {
+		for(int i=0; i< num; i++) {
 			ProducerTask2 producerTask2 = new ProducerTask2(mailbox, i);
 			producerTask2.start();
 		}
 		
 		
 		Thread.sleep(10_000);
-		System.out.println(mailbox.size());
+		long end = System.currentTimeMillis();
+		System.out.println(mailbox.size() +" cost:{}"+ (end-start));
 		
 	}
 
-	private static void test1() throws InterruptedException {
-		
+	private static void test1(long num) throws InterruptedException {
+		long start = System.currentTimeMillis();
 		Mailbox<Integer> mailbox = new Mailbox<>();
-		for(int i=0; i< 100_0000; i++) {
+		for(int i=0; i< num; i++) {
 			ProducerTask producerTask = new ProducerTask(mailbox, i);
 			producerTask.start();
 		}
 		
 		
 		Thread.sleep(10_000);
-		System.out.println(mailbox.size());
+		long end = System.currentTimeMillis();
+		System.out.println(mailbox.size()+" cost:{}"+ (end-start));
 		
 	}
 
