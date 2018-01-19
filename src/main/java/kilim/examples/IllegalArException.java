@@ -1,4 +1,4 @@
-package com.tencent.java.kilim;
+package kilim.examples;
 
 import kilim.Mailbox;
 import kilim.Pausable;
@@ -12,7 +12,7 @@ public class IllegalArException extends Task {
 	public void execute() throws Pausable {
 		int i = 2;
 		try {
-//			new Mailbox<String>().get(1000);// RPC
+			new Mailbox<String>().get(1000);// RPC
 			throw new DolphinRunException();
 		} catch (DolphinRunException ex) {
 			System.out.println("DolphinRunException:" + i);
