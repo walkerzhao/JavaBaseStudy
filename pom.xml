@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -144,10 +144,10 @@
 				</configuration>
 			</plugin>
 			
-<!-- 			<plugin>
-              <groupId>io.kilimty</groupId>
-              <artifactId>kilim-maven-plugin</artifactId>
-              <version>1.0-SNAPSHOT</version>
+			<plugin>
+              <groupId>com.tencent.jungle</groupId>
+              <artifactId>kilim_maven_plugin</artifactId>
+              <version>0.0.1-SNAPSHOT</version>
               <executions>
                   <execution>
                       <id>weave</id>
@@ -157,9 +157,9 @@
                       </goals>
                   </execution>
               </executions>
-          </plugin> -->
+          </plugin>
 
-			<plugin>
+<!-- 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<executions>
@@ -182,7 +182,7 @@
 						<argument>${project.build.outputDirectory}</argument>
 					</arguments>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -268,7 +268,26 @@
 										<ignore></ignore>
 									</action>
 								</pluginExecution>
-								
+
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											com.tencent.jungle
+										</groupId>
+										<artifactId>
+											kilim_maven_plugin
+										</artifactId>
+										<versionRange>
+											[0.0.1-SNAPSHOT,)
+										</versionRange>
+										<goals>
+											<goal>weave</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
 							</pluginExecutions>
 						</lifecycleMappingMetadata>
 					</configuration>

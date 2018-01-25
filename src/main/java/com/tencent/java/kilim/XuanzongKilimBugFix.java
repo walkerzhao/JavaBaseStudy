@@ -12,15 +12,15 @@ import kilim.Mailbox;
 public class XuanzongKilimBugFix {
 	public static void main(String[] args) throws InterruptedException {
 		int initailSize = 5;
-		int maxSize = 5;
+		int maxSize = 3000_0000;
 		Mailbox<Integer> mailbox = new Mailbox<>(initailSize, maxSize); 
 		Producer producer = new Producer(mailbox, maxSize); 
 		new Thread(producer).start();
 		
 		Thread.sleep(1000);
 		
-		Consumer consumer = new Consumer(mailbox, maxSize);
-		new Thread(consumer).start();
+//		Consumer consumer = new Consumer(mailbox, maxSize);
+//		new Thread(consumer).start();
 		
 	}
 	
@@ -52,16 +52,21 @@ class Producer implements Runnable {
 	private  void testMailBoxPutbMsg() {
 		System.out.println("put msg into mailbox");
 		
+		long start = System.currentTimeMillis();
 		for(int i=0; i< (maxSize+1);i++) {
 			synchronized (mailbox) {
 				mailbox.putb(i);
-				System.out.println("pub msg suc:"+i +" mailbox size:" + mailbox.size() );
-				System.out.print("mailbox data: ");
-				for(int j=0; j< ((Object[])mailbox.msgs).length; j++) {
-					System.out.print(((Object[])mailbox.msgs)[j] +" ");
+				if(mailbox.size()==maxSize) {
+					long end = System.currentTimeMillis();
+					System.out.println("pub msg suc:"+i +" mailbox size:" + mailbox.size() );
+					System.out.println("cost:" + (end-start));
 				}
+//				System.out.print("mailbox data: ");
+//				for(int j=0; j< ((Object[])mailbox.msgs).length; j++) {
+//					System.out.print(((Object[])mailbox.msgs)[j] +" ");
+//				}
 
-				System.out.println();
+//				System.out.println();
 				
 			}
 			
