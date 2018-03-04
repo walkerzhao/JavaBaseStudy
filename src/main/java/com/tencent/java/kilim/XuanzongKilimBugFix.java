@@ -57,9 +57,9 @@ class Producer implements Runnable {
 				mailbox.putb(i);
 				System.out.println("pub msg suc:"+i +" mailbox size:" + mailbox.size() );
 				System.out.print("mailbox data: ");
-				for(int j=0; j< ((Object[])mailbox.msgs).length; j++) {
-					System.out.print(((Object[])mailbox.msgs)[j] +" ");
-				}
+//				for(int j=0; j< ((Object[])mailbox.msgs).length; j++) {
+//					System.out.print(((Object[])mailbox.msgs)[j] +" ");
+//				}
 
 				System.out.println();
 				

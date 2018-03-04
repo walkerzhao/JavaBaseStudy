@@ -98,11 +98,11 @@
 			<version>1.2.40</version>
 		</dependency>
 
-<!-- 		<dependency>
+		<dependency>
 			<groupId>org.db4j</groupId>
 			<artifactId>kilim</artifactId>
-			<version>2.0.0-12</version>
-		</dependency> -->
+			<version>2.0.0-15</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
@@ -120,7 +120,7 @@
 		<dependency>
 			<groupId>kilim</groupId>
 			<artifactId>kilim</artifactId>
-			<version>1.0.6</version>
+			<version>1.0</version>
 		</dependency>
 
 
@@ -144,6 +144,17 @@
 				</configuration>
 			</plugin>
 			
+			  <plugin>
+        <groupId>org.db4j</groupId>
+        <artifactId>kilim</artifactId>
+        <version>2.0.0-15</version>
+        <executions>
+            <execution>
+                <goals><goal>weave</goal></goals>
+            </execution>
+        </executions>
+    </plugin>
+			
 <!-- 			<plugin>
               <groupId>io.kilimty</groupId>
               <artifactId>kilim-maven-plugin</artifactId>
@@ -159,7 +170,7 @@
               </executions>
           </plugin> -->
 
-			<plugin>
+<!-- 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<executions>
@@ -182,7 +193,7 @@
 						<argument>${project.build.outputDirectory}</argument>
 					</arguments>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
