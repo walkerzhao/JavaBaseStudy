@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * 数组移除操作
+ * http://www.importnew.com/20959.html
  * @author ewanzhao
  *
  */
@@ -14,6 +15,13 @@ public class ArrayListRemoveOp {
 //		testArrayListRemove(arrayList);    //删除角标的方式删除
 		
 		testArrayListRemoveV2(arrayList);
+		
+		testArrayListRemoveV3(arrayList);
+	}
+
+	private static void testArrayListRemoveV3(ArrayList<Integer> arrayList) {
+		
+		
 	}
 
 	/**
