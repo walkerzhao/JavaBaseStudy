@@ -1,6 +1,8 @@
 package com.tencent.java.collections;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 
 /**
  * 数组移除操作
@@ -10,17 +12,34 @@ import java.util.ArrayList;
  */
 public class ArrayListRemoveOp {
 	
+	private static final int EQUAL_NUM = 3;
+
 	public static void main(String[] args) {
 		ArrayList<Integer> arrayList = buildArrayList();
-//		testArrayListRemove(arrayList);    //删除角标的方式删除
+		testArrayListRemove(arrayList);    //删除角标的方式删除
 		
-		testArrayListRemoveV2(arrayList);
+//		testArrayListRemoveV2(arrayList);
 		
-		testArrayListRemoveV3(arrayList);
+//		testArrayListRemoveV3(arrayList);
 	}
 
+	/**
+	 * 通过迭代器来删除
+	 * @param arrayList
+	 */
 	private static void testArrayListRemoveV3(ArrayList<Integer> arrayList) {
 		
+		System.out.println("before remove:"+arrayList);
+		
+		Iterator<Integer> iteratorList = arrayList.iterator();
+		while(iteratorList.hasNext()) {
+			Integer data = iteratorList.next();
+			if(data.equals(EQUAL_NUM)) {
+				iteratorList.remove();
+			}
+		}
+		
+		System.out.println("after remove:"+arrayList);
 		
 	}
 
@@ -39,7 +58,7 @@ public class ArrayListRemoveOp {
 		
 		System.out.println("before remove:"+arrayList);
 		for(Integer integer : arrayList ) {
-			if(integer.equals(3)) {
+			if(integer.equals(EQUAL_NUM)) {
 				arrayList.remove(integer);
 			}
 		}
@@ -65,17 +84,23 @@ public class ArrayListRemoveOp {
 	}
 
 	private static void testArrayListRemove(ArrayList<Integer> arrayList) {
-//		arrayList.
-		
+
 		System.out.println("before remove:"+arrayList);
+//		for(int i=0; i< arrayList.size(); i++) {
+//			if(arrayList.get(i) == 3) {
+//				arrayList.remove(i);
+//			}
+//		}
+		
 		for(int i=0; i< arrayList.size(); i++) {
 			if(arrayList.get(i) == 3) {
 				arrayList.remove(i);
+				i--;
+
 			}
 		}
 		
-		System.out.println("after remove:"+arrayList);
-		
+		System.out.println("after remove:"+arrayList);		
 		
 	}
 
