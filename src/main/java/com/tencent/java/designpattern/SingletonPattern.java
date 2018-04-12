@@ -1,5 +1,7 @@
 package com.tencent.java.designpattern;
 
+import java.util.HashSet;
+
 /**
  * 单例模式:http://wuchong.me/blog/2014/08/28/how-to-correctly-write-singleton-pattern/
  * @author ewanzhao
@@ -84,6 +86,7 @@ public class SingletonPattern {
 	 * @return
 	 */
 	public static  SingletonPattern getInstanceDoubleCheckWithVolatile() {
+//		HashSet<E>
 		if(singletonPatternWithVolatile == null) {   //first check
 			synchronized (SingletonPattern.class) {
 				if(singletonPatternWithVolatile == null) {
