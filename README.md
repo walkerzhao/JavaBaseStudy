@@ -52,3 +52,8 @@
 * 如何查看占用cpu最长的线程。ps 找到java对应的进程id，top -H -p pid，查看进程里的线程占用cpu的百分比，这里的线程id是原生线程，jstack里的线程id有jvm的和native的，需要转换一下，看看jvm里的哪个线程占用cpu最高。http://blog.csdn.net/hanghangaidoudou/article/details/51488249. mac下这个命令用不了。待搜索。
 
 
+## 算法
+* 剑指offer相关--@see com.tencent.java.algorithm.swordoffer;
+* todo: 查找字符串中所有的回文串； 查找字符串集合中 包含自定 前缀的 字符串
+
+
