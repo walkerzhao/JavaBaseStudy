@@ -1,7 +1,10 @@
 package com.tencent.java.collections;
 
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
- * åˆ¤æ–­Integer ç›¸ç­‰ç¬¦å·--in the range -128 to 127 æ˜¯ç¼“å­˜çš„ï¼ŒæŒ‡å‘åŒä¸€ä¸ªåœ°æ–¹ï¼Œå…¶ä»–çš„æ˜¯newå‡ºæ¥çš„
+ * ÅĞ¶ÏInteger ÏàµÈ·ûºÅ--in the range -128 to 127 ÊÇ»º´æµÄ£¬Ö¸ÏòÍ¬Ò»¸öµØ·½£¬ÆäËûµÄÊÇnew³öÀ´µÄ
  * {@link Integer valueOf()}
  * http://blog.csdn.net/xiaojiesu/article/details/50215237
  * @author ewanzhao
@@ -11,6 +14,7 @@ public class IntegerEqual {
 	
 	public static void main(String[] args) {
 		testIntegerEqual(123,123);
+		AtomicInteger
 		
 		testIntegerEqual(12345,12345);
 	}
