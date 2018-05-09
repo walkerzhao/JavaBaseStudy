@@ -9,13 +9,18 @@ import java.util.concurrent.locks.ReentrantLock;
  * 几种测试情况
  * volatile不带volatile：8700
  * 带volatile：7577
+ * 
+ * 结论：volatile可以保证可见性（线程中对volatile变量进行写操作，会立即刷新到主内存，正常不会理解刷新）、有序性（禁止cpu指令重排序）;
+ * 但是不能保证原子性，可以通过 synchronized或lock 进行加锁；或者使用AtomicInteger（cas操作） 来保证原子性。
+ * 
+ * volatile的使用场景：https://blog.csdn.net/vking_wang/article/details/9982709   状态标记、单例模式的double check等；
  * @author andy
  *
  */
 public class VolatileTest {
 	public  int incr = 0;
 	
-	public int incrWithVolatile =0;
+	public volatile int incrWithVolatile =0;
 	
 	public int incrWithSync = 0;
 	
@@ -69,9 +74,9 @@ public class VolatileTest {
 		
 		System.out.println(volatileTest.incr);
 		System.out.println(volatileTest.incrWithVolatile);
-		System.out.println(volatileTest.incrWithSync);
-		System.out.println(volatileTest.incrWithLock);
-		System.out.println(volatileTest.incrAtomicInteger);
+		System.out.println(volatileTest.incrWithSync);    //保证操作同步
+		System.out.println(volatileTest.incrWithLock);		//使用锁
+		System.out.println(volatileTest.incrAtomicInteger);	//AtomicInteger  原子类型操作
 	}
 
 }

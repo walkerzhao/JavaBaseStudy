@@ -12,7 +12,11 @@ import java.util.List;
 public class GenericTest {
 	
 	public static void main(String[] args) {
-		
+		if(3*0.1 == 0.3) {
+			System.out.println(true);
+		} else {
+			System.out.println(false);
+		}
 		
 		typeErasure();
 	}
