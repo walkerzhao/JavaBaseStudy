@@ -4,7 +4,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * ÅÐ¶ÏInteger ÏàµÈ·ûºÅ--in the range -128 to 127 ÊÇ»º´æµÄ£¬Ö¸ÏòÍ¬Ò»¸öµØ·½£¬ÆäËûµÄÊÇnew³öÀ´µÄ
+ * ï¿½Ð¶ï¿½Integer ï¿½ï¿½È·ï¿½ï¿½ï¿½--in the range -128 to 127 ï¿½Ç»ï¿½ï¿½ï¿½Ä£ï¿½Ö¸ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½newï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  * {@link Integer valueOf()}
  * http://blog.csdn.net/xiaojiesu/article/details/50215237
  * @author ewanzhao
@@ -14,7 +14,6 @@ public class IntegerEqual {
 	
 	public static void main(String[] args) {
 		testIntegerEqual(123,123);
-		AtomicInteger
 		
 		testIntegerEqual(12345,12345);
 	}
